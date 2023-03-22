@@ -1,2 +1,2 @@
 # Ecommerce---Restaurant
-Ecommerce for restaurant with all its available products, order cart and more functions
+Ecommerce for restaurant with all its available products, order cart and more functions with mobile version
