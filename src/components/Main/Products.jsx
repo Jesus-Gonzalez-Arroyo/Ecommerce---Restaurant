@@ -1,11 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { FaSearch, FaPlus, FaMinus } from 'react-icons/fa';
+import { FaSearch, FaCartPlus } from 'react-icons/fa';
 import Link from "next/link";
 
 
 export default function Products({ products }) {
-    console.log(products)
     const date = new Date()
     const day = date.getUTCDay() + 19
     const month = date.getUTCMonth() + 1
@@ -83,17 +82,18 @@ export default function Products({ products }) {
                             Promociones
                         </Link>
                     </nav>
-                    <div className="grid grid-cols-1 gap-8 mt-5 pb-20 md:grid-cols-2 lg:grid-cols-4">
+                    <div className="grid grid-cols-1 gap-8 mt-5 pb-20 md:grid-cols-2 lg:grid-cols-3">
                         {
                             products.map(({_id, Nombre_product, Image, Precio, Descripcion, Tipo})=>(
-                                <div className="p-6 rounded-lg flex flex-col gap-2 items-center bg-[#1F1D2B] text-gray-200" key={_id}>
+                                <div className="p-6 rounded-lg flex flex-col gap-2 items-center justify-between bg-[#1F1D2B] text-gray-200" key={_id}>
                                     <img className="rounded-full w-52 h-52 mb-5" src={`${Image}`} alt={"Producto"}/>
                                     <p className="text-3xl text-center font-bold">{Nombre_product}</p>
                                     <p className="text-xl text-gray-400 font-bold">$ {Precio}</p>
                                     <p className="text-xl text-center text-gray-600 font-bold">{Descripcion}</p>
-                                    <div className="mt-4 flex gap-7">
-                                        <button className="p-4 bg-red-300 rounded-full"><FaPlus /></button>
-                                        <button className="p-4 bg-red-300 rounded-full"><FaMinus /></button>
+                                    <div className="mt-4 w-1/2 mx-auto">
+                                        <button className="p-2 w-full mx-auto rounded-lg bg-red-300">
+                                            <FaCartPlus className="text-2xl mx-auto" />
+                                        </button>
                                     </div>
                                 </div>
                             ))

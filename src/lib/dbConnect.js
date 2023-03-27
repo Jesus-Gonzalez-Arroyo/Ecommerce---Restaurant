@@ -9,7 +9,6 @@ const ConectarDb = async() => {
             useUnifiedTopology: true,
             bufferCommands: true,
         })
-        console.log('Conectado :)')
     } catch (error) {
         console.log(error)
         process.exit(1)

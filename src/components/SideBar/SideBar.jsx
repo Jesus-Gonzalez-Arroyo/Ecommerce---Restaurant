@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { FaHome, FaPlus, FaPen, FaPenSquare, FaPowerOff} from 'react-icons/fa'
 
-const SideBar = ({ showMenu }) => {
+const SideBar = ({ showMenu, AddProductSideBar }) => {
     return (
         <div className={`bg-[#1F1D2B] fixed w-24 py-4 top-0 h-full flex flex-col justify-between z-50 transition-all lg:block lg:left-0 lg:flex lg:flex-col lg:justify-between ${showMenu ? "left-0" : "-left-full"}`}>
             <div>
@@ -12,9 +12,9 @@ const SideBar = ({ showMenu }) => {
                         Logo
                         </h1>
                     </li>
-                    <li className="p-3 bg-[#262837] rounded-tl-lg rounded-bl-lg">
-                        <Link className="bg-[#ec7c6a] p-3 text-center block rounded-lg" href='/'>
-                            <FaHome className="text-xl text-white m-auto"/>
+                    <li className={`p-3 bg-[#262837] rounded-tl-lg rounded-bl-lg hover:bg-[#262837] ${AddProductSideBar ? 'bg-transparent':''} group`}>
+                        <Link className={`bg-[#ec7c6a] p-3 text-center block rounded-lg hover:bg-[#ec7c6a] ${AddProductSideBar ? 'bg-transparent':''}`} href='/'>
+                            <FaHome className={`text-xl text-white m-auto ${AddProductSideBar ? 'text-[#ec7c6a]':''}`}/>
                         </Link>
                     </li>
                     <li className="p-3 rounded-tl-lg rounded-bl-lg group hover:bg-[#262837] transition-colors">
@@ -22,9 +22,9 @@ const SideBar = ({ showMenu }) => {
                             <FaPenSquare className="text-xl text-[#ec7c6a] m-auto group-hover:text-white"/>
                         </Link>
                     </li>
-                    <li className="p-3 rounded-tl-lg rounded-bl-lg group hover:bg-[#262837] transition-colors">
-                        <Link className="p-3 text-center block rounded-lg group-hover:bg-[#ec7c6a] transition-colors" href='/'>
-                            <FaPlus className="text-xl text-[#ec7c6a] m-auto group-hover:text-white"/>
+                    <li className={`p-3 rounded-tl-lg rounded-bl-lg group hover:bg-[#262837] transition-colors ${AddProductSideBar ? 'bg-[#262837]':''}`}>
+                        <Link className={`p-3 text-center block rounded-lg group-hover:bg-[#ec7c6a] transition-colors ${AddProductSideBar ? 'bg-[#ec7c6a]' : ''}`} href='/AddProduct'>
+                            <FaPlus className={`text-xl text-[#ec7c6a] m-auto group-hover:text-white ${AddProductSideBar ? 'text-white':''}`}/>
                         </Link>
                     </li>
                     <li className="p-3 rounded-tl-lg rounded-bl-lg group hover:bg-[#262837] transition-colors">
